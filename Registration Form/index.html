@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="container">
+        <header>Registration Form</header>
+        
+        <form action="#" class="form">
+            <div class="input-box">
+                <h3>Username</h3>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-box">
+                <h3>Email</h3>
+                <input type="text" placeholder="Enter your email" required>
+            </div>
+
+
+            <div class="input-box">
+                <h3>Password</h3>
+                <input type="password" placeholder="Enter your password" id="password" required>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <h3>Phone Number</h3>
+                    <input type="text" placeholder="Enter phone number" required>
+                </div>
+
+                <div class="input-box">
+                    <h3>Birth Date</h3>
+                    <input type="date" >
+                </div>
+            </div>
+
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender">
+                        <label for="check-male">Male</label>
+                    </div>
+
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender">
+                        <label for="check-female">Female</label>
+                    </div>
+
+                    <div class="gender">
+                        <input type="radio" id="check-other" name="gender">
+                        <label for="check-other">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-box ">
+                <h3>Profile Picture</h3>
+                <input type="file" id="profile-picture" accept="image/*">
+            </div>
+
+            
+            <div class="input-box address">
+                <h3>Address</h3>
+                <input type="text" placeholder="Enter street address" required>
+
+                <div class="column">
+                    <div class="select-box">
+                        <select>
+                            <option selected>Select country</option>
+                            <option>Afghanistan</option>
+                            <option>Algeria</option>
+                            <option>Australia</option>
+                            <option>Austria</option>
+                            <option>Bangladesh</option>
+                            <option>Belgium</option>
+                            <option>Brazil</option>
+                            <option>Canada</option>
+                            <option>China</option>
+                            <option>Comoros</option>
+                            <option>Egypt</option>
+                            <option>France</option>
+                            <option>Georgia</option>
+                            <option>India</option>
+                            <option>Indonesia</option>
+                            <option>Italy</option>
+                            <option>Japan</option>
+                            <option>Malaysia</option>
+                            <option>Maldives</option>
+                            <option>Nigeria</option>
+                            <option>Shri Lanka</option>
+                            <option>Sweden</option>
+                            <option>Thailand</option>
+                            <option>Zimbabwe</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="text" placeholder="Enter your state" required class="a">
+                <input type="text" placeholder="Enter your city" required class="a">
+                <input type="text" placeholder="Enter postal code" required class="a">
+            </div>
+
+            <div class="input-box check">
+                <input type="checkbox" id="agree-terms" required >
+                <label for="agree-terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a></label>
+            </div>
+
+
+            <div class="button">
+                <button type="button" id="clear-form-button">Clear Form</button>
+
+                <button>Submit</button>
+            </div>
+            
+
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Find the "Clear Form" button
+            var clearFormButton = document.getElementById("clear-form-button");
+    
+            // Find all form fields that you want to reset
+            var formFields = document.querySelectorAll("input, select, textarea");
+    
+            // Add a click event listener to the "Clear Form" button
+            clearFormButton.addEventListener("click", function() {
+                // Loop through the form fields and reset their values
+                formFields.forEach(function(field) {
+                    if (field.type === "text" || field.type === "email" || field.type === "tel" || field.type === "password" || field.type === "date"|| field.tagName === "SELECT" || field.tagName === "TEXTAREA") {
+                        field.value = ""; // Reset text, email, tel, select, and textarea fields
+                    } else if (field.type === "radio" || field.type === "checkbox") {
+                        field.checked = false; // Uncheck radio and checkbox inputs
+                    }
+                });
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
