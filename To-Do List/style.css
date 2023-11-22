@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;    
+}
+
+
+body {
+    animation: theme 21s linear infinite;
+    
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        width: 100vw;  
+        height: 100vh; 
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(0,0,0,0.05);
+        animation: background 90s linear infinite;
+    }
+
+    &:after {
+        left: 15vw;
+    }
+
+    &:before {
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    }
+}
+
+@keyframes theme {
+    0% {
+        background: #74C390;
+    }
+    
+    16% {
+        background: #5DBDB6;
+    }
+    
+    33% {
+        background: #59D4E1;
+    }
+    
+    50% {
+        background: #51BCE8;
+    }
+    
+    66% {
+        background: #FA5374;
+    }    
+    
+    83% {
+        background: #E46653;
+    }
+
+    100% {
+        background: #74C390;
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.app {
+    width: 80vw;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+#wrapper input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    margin-right: 8px;
+    opacity: 0.9;
+}
+
+#wrapper button {
+    flex: 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(50, 50, 50,0.8);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+#tasks {
+    margin-top: 20px;
+}
+
+
+
+
+
+.task{   
+    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 10% 60% 10% 10%;
+    gap: 10px;
+    cursor: pointer;
+    background-color: rgb(216, 198, 209,0.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.16);
+}
+
+.task:not(:first-child){
+    margin-top: 10px;
+}
+
+.task input[type="checkbox"]{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #363535;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.task input[type="checkbox"]:checked {
+    background-color: black;
+}
+.task button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #4b4a4a;
+}
+
+#error {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #b10303;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: none;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#date, #time {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#date {
+    color: #080808;
+}
+
+#time {
+    color: #000000;
+}
+
+
